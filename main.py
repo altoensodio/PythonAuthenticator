@@ -23,7 +23,7 @@ def verify_json():
     else:
         try:
             file = open(JSON_PATH, "w")
-            file.write('{"example": {"key": "base32secret3232","type": "time"}}')
+            file.write('{"example": {"key": "base32secret3232"}}')
             file.close()
         except Exception as e:
             print("Unexpected error: {}".format(e))
@@ -37,7 +37,7 @@ def show_code(
     if e:
         try:
             totp = pyotp.TOTP('{}'.format(name))
-            print(totp.now())
+            print("Code: {}".format(totp.now()))
         except Exception as e:
             print("Error: {}".format(e))
     else:
@@ -45,23 +45,24 @@ def show_code(
             if exists_in_json(name) == True: 
                 data = json.load(open(JSON_PATH))
                 totp = pyotp.TOTP(data[name]["key"])
-                print(totp.now())
+                print('"{}" code: {}'.format(name, totp.now()))
             else:
                 print('"{}" not in key file.')
         except Exception as e:
             print("Error: {}".format(e))
 
 @app.command()
-def add_key(name: str, key: str, ftype: str):
+def add_key(name: str, key: str):
     try:
         verify_json()
         if exists_in_json(name) == False:
-            y = {"{}".format(name):{"key": "{}".format(key),"type": "{}".format(ftype)}}
+            y = {"{}".format(name):{"key": "{}".format(key)}}
             with open(JSON_PATH) as f:
                 data = json.load(f)
             data.update(y)
             with open(JSON_PATH, 'w') as f:
                 json.dump(data, f)
+            print('"{}" added to key file.'.format(name))
         else:
             print('"{}" already in key file.'.format(name))
     except Exception as e:
@@ -77,6 +78,7 @@ def del_key(name: str):
             data.pop(name)
             with open(JSON_PATH, "w") as f:
                 json.dump(data, f)
+            print('"{}" removed from key file.'.format(name))
         else:
             print('"{}" is not in key file.'.format(name))
 
