@@ -1,12 +1,16 @@
 import pyotp
 import json
+from os.path import expanduser
+from os.path import join
 from os.path import exists
+from os import makedirs
 import typer
 from tabulate import tabulate
 
 app = typer.Typer()
 
-JSON_PATH = "keys.json"
+PATH = join(expanduser('~'), ".config", "pyauthenticator")
+JSON_PATH = join(PATH, "keys.json")
 
 def exists_in_json(a):
     with open(JSON_PATH) as f:
@@ -22,9 +26,15 @@ def verify_json():
         pass
     else:
         try:
-            file = open(JSON_PATH, "w")
-            file.write('{"example": {"key": "base32secret3232"}}')
-            file.close()
+            if exists("~/.config/pyauthenticator/"):
+                file = open(JSON_PATH, "w")
+                file.write('{"example": {"key": "base32secret3232"}}')
+                file.close()
+            else:
+                makedirs(PATH)
+                file = open(JSON_PATH, "w")
+                file.write('{"example": {"key": "base32secret3232"}}')
+                file.close()
         except Exception as e:
             print("Unexpected error: {}".format(e))
 
@@ -34,6 +44,7 @@ def show_code(
     name: str,
     e: bool = typer.Option(False, help="Show TOTP code of a key outside key file."),
 ):
+    verify_json()
     if e:
         try:
             totp = pyotp.TOTP('{}'.format(name))
