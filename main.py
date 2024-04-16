@@ -58,7 +58,7 @@ def show_code(
                 totp = pyotp.TOTP(data[name]["key"])
                 print('"{}" code: {}'.format(name, totp.now()))
             else:
-                print('"{}" not in key file.')
+                print('"{}" not in key file.'.format(name))
         except Exception as e:
             print("Error: {}".format(e))
 
