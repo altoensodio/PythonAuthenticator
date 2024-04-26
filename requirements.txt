@@ -1,3 +1,4 @@
 pyotp
 typer
 tabulate
+inquirer
