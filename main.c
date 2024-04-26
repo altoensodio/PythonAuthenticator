@@ -1492,7 +1492,7 @@ struct __pyx_defaults4;
 typedef struct __pyx_defaults4 __pyx_defaults4;
 struct __pyx_defaults {
   PyObject *__pyx_arg_key_id;
-  PyObject *__pyx_arg_issuer_name;
+  PyObject *__pyx_arg_issuer;
   PyObject *__pyx_arg_e;
   PyObject *__pyx_arg_t;
 };
@@ -1503,7 +1503,7 @@ struct __pyx_defaults1 {
 };
 struct __pyx_defaults2 {
   PyObject *__pyx_arg_key_id;
-  PyObject *__pyx_arg_issuer_name;
+  PyObject *__pyx_arg_issuer;
 };
 struct __pyx_defaults3 {
   PyObject *__pyx_arg_t;
@@ -2336,6 +2336,7 @@ static const char __pyx_k_format[] = "format";
 static const char __pyx_k_header[] = "header";
 static const char __pyx_k_id_num[] = "id_num";
 static const char __pyx_k_import[] = "__import__";
+static const char __pyx_k_issuer[] = "issuer";
 static const char __pyx_k_key_id[] = "key_id";
 static const char __pyx_k_main_2[] = "main";
 static const char __pyx_k_name_2[] = "__name__";
@@ -2424,11 +2425,11 @@ static PyObject *__pyx_pf_4main_6get_table(CYTHON_UNUSED PyObject *__pyx_self, P
 static PyObject *__pyx_pf_4main_8refresh_string(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_string); /* proto */
 static PyObject *__pyx_pf_4main_10time_left(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_totp); /* proto */
 static PyObject *__pyx_pf_4main_22__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_key_id, PyObject *__pyx_v_issuer_name, PyObject *__pyx_v_e, PyObject *__pyx_v_t); /* proto */
+static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_key_id, PyObject *__pyx_v_issuer, PyObject *__pyx_v_e, PyObject *__pyx_v_t); /* proto */
 static PyObject *__pyx_pf_4main_24__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_4main_14add_key(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_name, PyObject *__pyx_v_issuer_name, PyObject *__pyx_v_key); /* proto */
 static PyObject *__pyx_pf_4main_26__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_key_id, PyObject *__pyx_v_issuer_name); /* proto */
+static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_key_id, PyObject *__pyx_v_issuer); /* proto */
 static PyObject *__pyx_pf_4main_28__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_4main_18keys(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_t); /* proto */
 static PyObject *__pyx_pf_4main_30__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
@@ -2560,6 +2561,7 @@ typedef struct {
   PyObject *__pyx_n_s_inquirer_list;
   PyObject *__pyx_n_s_interval;
   PyObject *__pyx_n_s_is_coroutine;
+  PyObject *__pyx_n_s_issuer;
   PyObject *__pyx_n_s_issuer_name;
   PyObject *__pyx_n_u_issuer_name;
   PyObject *__pyx_n_s_join;
@@ -2796,6 +2798,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_inquirer_list);
   Py_CLEAR(clear_module_state->__pyx_n_s_interval);
   Py_CLEAR(clear_module_state->__pyx_n_s_is_coroutine);
+  Py_CLEAR(clear_module_state->__pyx_n_s_issuer);
   Py_CLEAR(clear_module_state->__pyx_n_s_issuer_name);
   Py_CLEAR(clear_module_state->__pyx_n_u_issuer_name);
   Py_CLEAR(clear_module_state->__pyx_n_s_join);
@@ -3010,6 +3013,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_inquirer_list);
   Py_VISIT(traverse_module_state->__pyx_n_s_interval);
   Py_VISIT(traverse_module_state->__pyx_n_s_is_coroutine);
+  Py_VISIT(traverse_module_state->__pyx_n_s_issuer);
   Py_VISIT(traverse_module_state->__pyx_n_s_issuer_name);
   Py_VISIT(traverse_module_state->__pyx_n_u_issuer_name);
   Py_VISIT(traverse_module_state->__pyx_n_s_join);
@@ -3234,6 +3238,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_inquirer_list __pyx_mstate_global->__pyx_n_s_inquirer_list
 #define __pyx_n_s_interval __pyx_mstate_global->__pyx_n_s_interval
 #define __pyx_n_s_is_coroutine __pyx_mstate_global->__pyx_n_s_is_coroutine
+#define __pyx_n_s_issuer __pyx_mstate_global->__pyx_n_s_issuer
 #define __pyx_n_s_issuer_name __pyx_mstate_global->__pyx_n_s_issuer_name
 #define __pyx_n_u_issuer_name __pyx_mstate_global->__pyx_n_u_issuer_name
 #define __pyx_n_s_join __pyx_mstate_global->__pyx_n_s_join
@@ -7624,9 +7629,9 @@ static PyObject *__pyx_pf_4main_22__defaults__(CYTHON_UNUSED PyObject *__pyx_sel
   __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_key_id);
   __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_key_id);
   if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_key_id)) __PYX_ERR(0, 120, __pyx_L1_error);
-  __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_issuer_name);
-  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_issuer_name);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_issuer_name)) __PYX_ERR(0, 120, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_issuer);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_issuer);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_issuer)) __PYX_ERR(0, 120, __pyx_L1_error);
   __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_e);
   __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_e);
   if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_e)) __PYX_ERR(0, 120, __pyx_L1_error);
@@ -7674,7 +7679,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
   PyObject *__pyx_v_key_id = 0;
-  PyObject *__pyx_v_issuer_name = 0;
+  PyObject *__pyx_v_issuer = 0;
   PyObject *__pyx_v_e = 0;
   PyObject *__pyx_v_t = 0;
   #if !CYTHON_METH_FASTCALL
@@ -7697,10 +7702,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
   {
-    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_key_id,&__pyx_n_s_issuer_name,&__pyx_n_s_e,&__pyx_n_s_t,0};
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_key_id,&__pyx_n_s_issuer,&__pyx_n_s_e,&__pyx_n_s_t,0};
     __pyx_defaults *__pyx_dynamic_args = __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self);
     values[0] = __Pyx_Arg_NewRef_FASTCALL(__pyx_dynamic_args->__pyx_arg_key_id);
-    values[1] = __Pyx_Arg_NewRef_FASTCALL(__pyx_dynamic_args->__pyx_arg_issuer_name);
+    values[1] = __Pyx_Arg_NewRef_FASTCALL(__pyx_dynamic_args->__pyx_arg_issuer);
     values[2] = __Pyx_Arg_NewRef_FASTCALL(__pyx_dynamic_args->__pyx_arg_e);
     values[3] = __Pyx_Arg_NewRef_FASTCALL(__pyx_dynamic_args->__pyx_arg_t);
     if (__pyx_kwds) {
@@ -7728,7 +7733,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_issuer_name);
+          PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_issuer);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
           else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 120, __pyx_L3_error)
         }
@@ -7766,7 +7771,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
     }
     __pyx_v_key_id = values[0];
-    __pyx_v_issuer_name = values[1];
+    __pyx_v_issuer = values[1];
     __pyx_v_e = values[2];
     __pyx_v_t = values[3];
   }
@@ -7786,7 +7791,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_12show_code(__pyx_self, __pyx_v_key_id, __pyx_v_issuer_name, __pyx_v_e, __pyx_v_t);
+  __pyx_r = __pyx_pf_4main_12show_code(__pyx_self, __pyx_v_key_id, __pyx_v_issuer, __pyx_v_e, __pyx_v_t);
 
   /* function exit code */
   {
@@ -7799,7 +7804,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_key_id, PyObject *__pyx_v_issuer_name, PyObject *__pyx_v_e, PyObject *__pyx_v_t) {
+static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_key_id, PyObject *__pyx_v_issuer, PyObject *__pyx_v_e, PyObject *__pyx_v_t) {
   PyObject *__pyx_v_totp = NULL;
   PyObject *__pyx_v_data = NULL;
   PyObject *__pyx_v_matches = NULL;
@@ -8107,7 +8112,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
  *                 print("Code: {}".format(totp.now()))
  *         except Exception as e:             # <<<<<<<<<<<<<<
  *             print("Unexpected error: {}".format(e))
- *     elif issuer_name:
+ *     elif issuer:
  */
       __pyx_t_4 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
       if (__pyx_t_4) {
@@ -8124,7 +8129,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
  *                 print("Code: {}".format(totp.now()))
  *         except Exception as e:
  *             print("Unexpected error: {}".format(e))             # <<<<<<<<<<<<<<
- *     elif issuer_name:
+ *     elif issuer:
  *         try:
  */
           __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Unexpected_error, __pyx_n_s_format); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 136, __pyx_L16_error)
@@ -8162,7 +8167,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
  *                 print("Code: {}".format(totp.now()))
  *         except Exception as e:             # <<<<<<<<<<<<<<
  *             print("Unexpected error: {}".format(e))
- *     elif issuer_name:
+ *     elif issuer:
  */
         /*finally:*/ {
           /*normal exit:*/{
@@ -8246,16 +8251,16 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
   /* "main.py":137
  *         except Exception as e:
  *             print("Unexpected error: {}".format(e))
- *     elif issuer_name:             # <<<<<<<<<<<<<<
+ *     elif issuer:             # <<<<<<<<<<<<<<
  *         try:
  *             data = json.load(open(JSON_PATH))
  */
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_issuer_name); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 137, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_issuer); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 137, __pyx_L1_error)
   if (__pyx_t_5) {
 
     /* "main.py":138
  *             print("Unexpected error: {}".format(e))
- *     elif issuer_name:
+ *     elif issuer:
  *         try:             # <<<<<<<<<<<<<<
  *             data = json.load(open(JSON_PATH))
  *             matches = []
@@ -8270,7 +8275,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
       /*try:*/ {
 
         /* "main.py":139
- *     elif issuer_name:
+ *     elif issuer:
  *         try:
  *             data = json.load(open(JSON_PATH))             # <<<<<<<<<<<<<<
  *             matches = []
@@ -8317,7 +8322,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
  *             data = json.load(open(JSON_PATH))
  *             matches = []             # <<<<<<<<<<<<<<
  *             for i in data:
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  */
         __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L22_error)
         __Pyx_GOTREF(__pyx_t_2);
@@ -8328,7 +8333,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
  *             data = json.load(open(JSON_PATH))
  *             matches = []
  *             for i in data:             # <<<<<<<<<<<<<<
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)
  */
         if (likely(PyList_CheckExact(__pyx_v_data)) || PyTuple_CheckExact(__pyx_v_data)) {
@@ -8389,7 +8394,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
           /* "main.py":142
  *             matches = []
  *             for i in data:
- *                 if data[i]["issuer_name"] == issuer_name:             # <<<<<<<<<<<<<<
+ *                 if data[i]["issuer_name"] == issuer:             # <<<<<<<<<<<<<<
  *                     matches.append(i)
  *             if len(matches) > 1:
  */
@@ -8398,7 +8403,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
           __pyx_t_10 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_u_issuer_name); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 142, __pyx_L22_error)
           __Pyx_GOTREF(__pyx_t_10);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = PyObject_RichCompare(__pyx_t_10, __pyx_v_issuer_name, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 142, __pyx_L22_error)
+          __pyx_t_3 = PyObject_RichCompare(__pyx_t_10, __pyx_v_issuer, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 142, __pyx_L22_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
           __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 142, __pyx_L22_error)
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -8406,7 +8411,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
 
             /* "main.py":143
  *             for i in data:
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)             # <<<<<<<<<<<<<<
  *             if len(matches) > 1:
  *                 inquirer_list = [data[i]["name"] for i in matches]
@@ -8416,7 +8421,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
             /* "main.py":142
  *             matches = []
  *             for i in data:
- *                 if data[i]["issuer_name"] == issuer_name:             # <<<<<<<<<<<<<<
+ *                 if data[i]["issuer_name"] == issuer:             # <<<<<<<<<<<<<<
  *                     matches.append(i)
  *             if len(matches) > 1:
  */
@@ -8426,14 +8431,14 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
  *             data = json.load(open(JSON_PATH))
  *             matches = []
  *             for i in data:             # <<<<<<<<<<<<<<
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)
  */
         }
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
         /* "main.py":144
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)
  *             if len(matches) > 1:             # <<<<<<<<<<<<<<
  *                 inquirer_list = [data[i]["name"] for i in matches]
@@ -8854,7 +8859,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
           }
 
           /* "main.py":144
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)
  *             if len(matches) > 1:             # <<<<<<<<<<<<<<
  *                 inquirer_list = [data[i]["name"] for i in matches]
@@ -9003,7 +9008,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
  *                 else:
  *                     print("{}({}) code: {}".format(data[matches[0]]["name"], data[matches[0]]["issuer_name"], totp.now()))             # <<<<<<<<<<<<<<
  *             else:
- *                 print('Issuer "{}" not in key file.'.format(issuer_name))
+ *                 print('Issuer "{}" not in key file.'.format(issuer))
  */
           /*else*/ {
             __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_code, __pyx_n_s_format); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 163, __pyx_L22_error)
@@ -9093,7 +9098,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
         /* "main.py":165
  *                     print("{}({}) code: {}".format(data[matches[0]]["name"], data[matches[0]]["issuer_name"], totp.now()))
  *             else:
- *                 print('Issuer "{}" not in key file.'.format(issuer_name))             # <<<<<<<<<<<<<<
+ *                 print('Issuer "{}" not in key file.'.format(issuer))             # <<<<<<<<<<<<<<
  *         except Exception as e:
  *             print("Unexpected error: {}".format(e))
  */
@@ -9115,7 +9120,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
           }
           #endif
           {
-            PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_v_issuer_name};
+            PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_v_issuer};
             __pyx_t_9 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_12, 1+__pyx_t_12);
             __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
             if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 165, __pyx_L22_error)
@@ -9131,7 +9136,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
 
         /* "main.py":138
  *             print("Unexpected error: {}".format(e))
- *     elif issuer_name:
+ *     elif issuer:
  *         try:             # <<<<<<<<<<<<<<
  *             data = json.load(open(JSON_PATH))
  *             matches = []
@@ -9152,7 +9157,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
 
       /* "main.py":166
  *             else:
- *                 print('Issuer "{}" not in key file.'.format(issuer_name))
+ *                 print('Issuer "{}" not in key file.'.format(issuer))
  *         except Exception as e:             # <<<<<<<<<<<<<<
  *             print("Unexpected error: {}".format(e))
  *     else:
@@ -9169,7 +9174,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
         /*try:*/ {
 
           /* "main.py":167
- *                 print('Issuer "{}" not in key file.'.format(issuer_name))
+ *                 print('Issuer "{}" not in key file.'.format(issuer))
  *         except Exception as e:
  *             print("Unexpected error: {}".format(e))             # <<<<<<<<<<<<<<
  *     else:
@@ -9207,7 +9212,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
 
         /* "main.py":166
  *             else:
- *                 print('Issuer "{}" not in key file.'.format(issuer_name))
+ *                 print('Issuer "{}" not in key file.'.format(issuer))
  *         except Exception as e:             # <<<<<<<<<<<<<<
  *             print("Unexpected error: {}".format(e))
  *     else:
@@ -9263,7 +9268,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
 
       /* "main.py":138
  *             print("Unexpected error: {}".format(e))
- *     elif issuer_name:
+ *     elif issuer:
  *         try:             # <<<<<<<<<<<<<<
  *             data = json.load(open(JSON_PATH))
  *             matches = []
@@ -9285,7 +9290,7 @@ static PyObject *__pyx_pf_4main_12show_code(CYTHON_UNUSED PyObject *__pyx_self, 
     /* "main.py":137
  *         except Exception as e:
  *             print("Unexpected error: {}".format(e))
- *     elif issuer_name:             # <<<<<<<<<<<<<<
+ *     elif issuer:             # <<<<<<<<<<<<<<
  *         try:
  *             data = json.load(open(JSON_PATH))
  */
@@ -11087,9 +11092,9 @@ static PyObject *__pyx_pf_4main_26__defaults__(CYTHON_UNUSED PyObject *__pyx_sel
   __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self)->__pyx_arg_key_id);
   __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self)->__pyx_arg_key_id);
   if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self)->__pyx_arg_key_id)) __PYX_ERR(0, 215, __pyx_L1_error);
-  __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self)->__pyx_arg_issuer_name);
-  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self)->__pyx_arg_issuer_name);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self)->__pyx_arg_issuer_name)) __PYX_ERR(0, 215, __pyx_L1_error);
+  __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self)->__pyx_arg_issuer);
+  __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self)->__pyx_arg_issuer);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self)->__pyx_arg_issuer)) __PYX_ERR(0, 215, __pyx_L1_error);
   __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 215, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -11131,7 +11136,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
   PyObject *__pyx_v_key_id = 0;
-  PyObject *__pyx_v_issuer_name = 0;
+  PyObject *__pyx_v_issuer = 0;
   #if !CYTHON_METH_FASTCALL
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   #endif
@@ -11152,10 +11157,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
   {
-    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_key_id,&__pyx_n_s_issuer_name,0};
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_key_id,&__pyx_n_s_issuer,0};
     __pyx_defaults2 *__pyx_dynamic_args = __Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_self);
     values[0] = __Pyx_Arg_NewRef_FASTCALL(__pyx_dynamic_args->__pyx_arg_key_id);
-    values[1] = __Pyx_Arg_NewRef_FASTCALL(__pyx_dynamic_args->__pyx_arg_issuer_name);
+    values[1] = __Pyx_Arg_NewRef_FASTCALL(__pyx_dynamic_args->__pyx_arg_issuer);
     if (__pyx_kwds) {
       Py_ssize_t kw_args;
       switch (__pyx_nargs) {
@@ -11177,7 +11182,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_issuer_name);
+          PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_issuer);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
           else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 215, __pyx_L3_error)
         }
@@ -11197,7 +11202,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       }
     }
     __pyx_v_key_id = values[0];
-    __pyx_v_issuer_name = values[1];
+    __pyx_v_issuer = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
@@ -11215,7 +11220,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_16del_key(__pyx_self, __pyx_v_key_id, __pyx_v_issuer_name);
+  __pyx_r = __pyx_pf_4main_16del_key(__pyx_self, __pyx_v_key_id, __pyx_v_issuer);
 
   /* function exit code */
   {
@@ -11228,7 +11233,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_key_id, PyObject *__pyx_v_issuer_name) {
+static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_key_id, PyObject *__pyx_v_issuer) {
   PyObject *__pyx_v_data = NULL;
   PyObject *__pyx_v_matches = NULL;
   PyObject *__pyx_v_i = NULL;
@@ -11268,11 +11273,11 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
   __Pyx_RefNannySetupContext("del_key", 1);
 
   /* "main.py":220
- *         issuer_name: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")
+ *         issuer: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")
  * ):
  *     try:             # <<<<<<<<<<<<<<
  *         verify_json()
- *         if issuer_name:
+ *         if issuer:
  */
   {
     __Pyx_PyThreadState_declare
@@ -11287,7 +11292,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
  * ):
  *     try:
  *         verify_json()             # <<<<<<<<<<<<<<
- *         if issuer_name:
+ *         if issuer:
  *             data = json.load(open(JSON_PATH))
  */
       __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_verify_json); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 221, __pyx_L3_error)
@@ -11319,16 +11324,16 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
       /* "main.py":222
  *     try:
  *         verify_json()
- *         if issuer_name:             # <<<<<<<<<<<<<<
+ *         if issuer:             # <<<<<<<<<<<<<<
  *             data = json.load(open(JSON_PATH))
  *             matches = []
  */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_issuer_name); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 222, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_issuer); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 222, __pyx_L3_error)
       if (__pyx_t_8) {
 
         /* "main.py":223
  *         verify_json()
- *         if issuer_name:
+ *         if issuer:
  *             data = json.load(open(JSON_PATH))             # <<<<<<<<<<<<<<
  *             matches = []
  *             for i in data:
@@ -11370,11 +11375,11 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
         __pyx_t_4 = 0;
 
         /* "main.py":224
- *         if issuer_name:
+ *         if issuer:
  *             data = json.load(open(JSON_PATH))
  *             matches = []             # <<<<<<<<<<<<<<
  *             for i in data:
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  */
         __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 224, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
@@ -11385,7 +11390,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
  *             data = json.load(open(JSON_PATH))
  *             matches = []
  *             for i in data:             # <<<<<<<<<<<<<<
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)
  */
         if (likely(PyList_CheckExact(__pyx_v_data)) || PyTuple_CheckExact(__pyx_v_data)) {
@@ -11446,7 +11451,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
           /* "main.py":226
  *             matches = []
  *             for i in data:
- *                 if data[i]["issuer_name"] == issuer_name:             # <<<<<<<<<<<<<<
+ *                 if data[i]["issuer_name"] == issuer:             # <<<<<<<<<<<<<<
  *                     matches.append(i)
  *             if len(matches) > 1:
  */
@@ -11455,7 +11460,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
           __pyx_t_9 = __Pyx_PyObject_Dict_GetItem(__pyx_t_6, __pyx_n_u_issuer_name); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 226, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          __pyx_t_6 = PyObject_RichCompare(__pyx_t_9, __pyx_v_issuer_name, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 226, __pyx_L3_error)
+          __pyx_t_6 = PyObject_RichCompare(__pyx_t_9, __pyx_v_issuer, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 226, __pyx_L3_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 226, __pyx_L3_error)
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -11463,7 +11468,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
 
             /* "main.py":227
  *             for i in data:
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)             # <<<<<<<<<<<<<<
  *             if len(matches) > 1:
  *                 inquirer_list = [data[i]["name"] for i in matches]
@@ -11473,7 +11478,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
             /* "main.py":226
  *             matches = []
  *             for i in data:
- *                 if data[i]["issuer_name"] == issuer_name:             # <<<<<<<<<<<<<<
+ *                 if data[i]["issuer_name"] == issuer:             # <<<<<<<<<<<<<<
  *                     matches.append(i)
  *             if len(matches) > 1:
  */
@@ -11483,14 +11488,14 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
  *             data = json.load(open(JSON_PATH))
  *             matches = []
  *             for i in data:             # <<<<<<<<<<<<<<
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)
  */
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
         /* "main.py":228
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)
  *             if len(matches) > 1:             # <<<<<<<<<<<<<<
  *                 inquirer_list = [data[i]["name"] for i in matches]
@@ -11762,7 +11767,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
  *                     data_control(id_num, True)
  *                     print("{}({}) removed from key file.".format(answer["name"], answer["issuer_name"]))             # <<<<<<<<<<<<<<
  *             else:
- *                 print('Issuer "{}" not in key file.'.format(issuer_name))
+ *                 print('Issuer "{}" not in key file.'.format(issuer))
  */
             __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_removed_from_key_file, __pyx_n_s_format); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 239, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_9);
@@ -11809,7 +11814,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
           }
 
           /* "main.py":228
- *                 if data[i]["issuer_name"] == issuer_name:
+ *                 if data[i]["issuer_name"] == issuer:
  *                     matches.append(i)
  *             if len(matches) > 1:             # <<<<<<<<<<<<<<
  *                 inquirer_list = [data[i]["name"] for i in matches]
@@ -11821,7 +11826,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
         /* "main.py":241
  *                     print("{}({}) removed from key file.".format(answer["name"], answer["issuer_name"]))
  *             else:
- *                 print('Issuer "{}" not in key file.'.format(issuer_name))             # <<<<<<<<<<<<<<
+ *                 print('Issuer "{}" not in key file.'.format(issuer))             # <<<<<<<<<<<<<<
  *         else:
  *             data = json.load(open(JSON_PATH))
  */
@@ -11843,7 +11848,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
           }
           #endif
           {
-            PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_issuer_name};
+            PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_issuer};
             __pyx_t_9 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
             __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
             if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 241, __pyx_L3_error)
@@ -11860,7 +11865,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
         /* "main.py":222
  *     try:
  *         verify_json()
- *         if issuer_name:             # <<<<<<<<<<<<<<
+ *         if issuer:             # <<<<<<<<<<<<<<
  *             data = json.load(open(JSON_PATH))
  *             matches = []
  */
@@ -11868,7 +11873,7 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
       }
 
       /* "main.py":243
- *                 print('Issuer "{}" not in key file.'.format(issuer_name))
+ *                 print('Issuer "{}" not in key file.'.format(issuer))
  *         else:
  *             data = json.load(open(JSON_PATH))             # <<<<<<<<<<<<<<
  *             int(key_id)
@@ -12092,11 +12097,11 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
       __pyx_L9:;
 
       /* "main.py":220
- *         issuer_name: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")
+ *         issuer: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")
  * ):
  *     try:             # <<<<<<<<<<<<<<
  *         verify_json()
- *         if issuer_name:
+ *         if issuer:
  */
     }
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12283,11 +12288,11 @@ static PyObject *__pyx_pf_4main_16del_key(CYTHON_UNUSED PyObject *__pyx_self, Py
     goto __pyx_L5_except_error;
 
     /* "main.py":220
- *         issuer_name: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")
+ *         issuer: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")
  * ):
  *     try:             # <<<<<<<<<<<<<<
  *         verify_json()
- *         if issuer_name:
+ *         if issuer:
  */
     __pyx_L5_except_error:;
     __Pyx_XGIVEREF(__pyx_t_1);
@@ -13338,7 +13343,7 @@ static PyObject *__pyx_pf_4main_20gen_key(CYTHON_UNUSED PyObject *__pyx_self, Py
   __Pyx_RefNannySetupContext("gen_key", 1);
 
   /* "main.py":282
- *         save: bool = typer.Option(False, help="Save the generated key in the key file.")
+ *         save: bool = typer.Option(False, help="Save the generated key in the key file."),
  * ):
  *     try:             # <<<<<<<<<<<<<<
  *         if save == True and name != None and issuer_name != None:
@@ -13573,7 +13578,7 @@ static PyObject *__pyx_pf_4main_20gen_key(CYTHON_UNUSED PyObject *__pyx_self, Py
       __pyx_L9:;
 
       /* "main.py":282
- *         save: bool = typer.Option(False, help="Save the generated key in the key file.")
+ *         save: bool = typer.Option(False, help="Save the generated key in the key file."),
  * ):
  *     try:             # <<<<<<<<<<<<<<
  *         if save == True and name != None and issuer_name != None:
@@ -13666,7 +13671,7 @@ static PyObject *__pyx_pf_4main_20gen_key(CYTHON_UNUSED PyObject *__pyx_self, Py
     goto __pyx_L5_except_error;
 
     /* "main.py":282
- *         save: bool = typer.Option(False, help="Save the generated key in the key file.")
+ *         save: bool = typer.Option(False, help="Save the generated key in the key file."),
  * ):
  *     try:             # <<<<<<<<<<<<<<
  *         if save == True and name != None and issuer_name != None:
@@ -13820,6 +13825,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_inquirer_list, __pyx_k_inquirer_list, sizeof(__pyx_k_inquirer_list), 0, 0, 1, 1},
     {&__pyx_n_s_interval, __pyx_k_interval, sizeof(__pyx_k_interval), 0, 0, 1, 1},
     {&__pyx_n_s_is_coroutine, __pyx_k_is_coroutine, sizeof(__pyx_k_is_coroutine), 0, 0, 1, 1},
+    {&__pyx_n_s_issuer, __pyx_k_issuer, sizeof(__pyx_k_issuer), 0, 0, 1, 1},
     {&__pyx_n_s_issuer_name, __pyx_k_issuer_name, sizeof(__pyx_k_issuer_name), 0, 0, 1, 1},
     {&__pyx_n_u_issuer_name, __pyx_k_issuer_name, sizeof(__pyx_k_issuer_name), 0, 1, 0, 1},
     {&__pyx_n_s_join, __pyx_k_join, sizeof(__pyx_k_join), 0, 0, 1, 1},
@@ -14047,7 +14053,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def show_code(
  *         key_id: str = typer.Argument(None, help="Key-ID to show code. (Use [command: keys] to see the IDs)"),
  */
-  __pyx_tuple__29 = PyTuple_Pack(12, __pyx_n_s_key_id, __pyx_n_s_issuer_name, __pyx_n_s_e, __pyx_n_s_t, __pyx_n_s_totp, __pyx_n_s_data, __pyx_n_s_matches, __pyx_n_s_i, __pyx_n_s_inquirer_list, __pyx_n_s_q, __pyx_n_s_answer, __pyx_n_s_i); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 120, __pyx_L1_error)
+  __pyx_tuple__29 = PyTuple_Pack(12, __pyx_n_s_key_id, __pyx_n_s_issuer, __pyx_n_s_e, __pyx_n_s_t, __pyx_n_s_totp, __pyx_n_s_data, __pyx_n_s_matches, __pyx_n_s_i, __pyx_n_s_inquirer_list, __pyx_n_s_q, __pyx_n_s_answer, __pyx_n_s_i); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
   __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(4, 0, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_main_py, __pyx_n_s_show_code, 120, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 120, __pyx_L1_error)
@@ -14056,7 +14062,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * @app.command()
  * def show_code(
  *         key_id: str = typer.Argument(None, help="Key-ID to show code. (Use [command: keys] to see the IDs)"),             # <<<<<<<<<<<<<<
- *         issuer_name: str = typer.Option(None, help="Search TOTP code by issuer."),
+ *         issuer: str = typer.Option(None, help="Search TOTP code by issuer."),
  *         e: bool = typer.Option(False, help="Show TOTP code of a key outside key file."),
  */
   __pyx_tuple__31 = PyTuple_Pack(1, Py_None); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 122, __pyx_L1_error)
@@ -14082,7 +14088,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def del_key(
  *         key_id: str = typer.Argument(None, help="Key-ID to delete. Use [command: keys] to see IDs"),
  */
-  __pyx_tuple__34 = PyTuple_Pack(11, __pyx_n_s_key_id, __pyx_n_s_issuer_name, __pyx_n_s_data, __pyx_n_s_matches, __pyx_n_s_i, __pyx_n_s_inquirer_list, __pyx_n_s_q, __pyx_n_s_answer, __pyx_n_s_id_num, __pyx_n_s_e, __pyx_n_s_i); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 215, __pyx_L1_error)
+  __pyx_tuple__34 = PyTuple_Pack(11, __pyx_n_s_key_id, __pyx_n_s_issuer, __pyx_n_s_data, __pyx_n_s_matches, __pyx_n_s_i, __pyx_n_s_inquirer_list, __pyx_n_s_q, __pyx_n_s_answer, __pyx_n_s_id_num, __pyx_n_s_e, __pyx_n_s_i); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 215, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__34);
   __Pyx_GIVEREF(__pyx_tuple__34);
   __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 11, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__34, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_main_py, __pyx_n_s_del_key, 215, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 215, __pyx_L1_error)
@@ -14871,7 +14877,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_3 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_key_id, __pyx_n_s_str) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_issuer_name, __pyx_n_s_str) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_issuer, __pyx_n_s_str) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_e, __pyx_n_s_bool) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_t, __pyx_n_s_bool) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
   __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_4main_13show_code, 0, __pyx_n_s_show_code, NULL, __pyx_n_s_main_2, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 120, __pyx_L1_error)
@@ -14882,7 +14888,7 @@ if (!__Pyx_RefNanny) {
  * @app.command()
  * def show_code(
  *         key_id: str = typer.Argument(None, help="Key-ID to show code. (Use [command: keys] to see the IDs)"),             # <<<<<<<<<<<<<<
- *         issuer_name: str = typer.Option(None, help="Search TOTP code by issuer."),
+ *         issuer: str = typer.Option(None, help="Search TOTP code by issuer."),
  *         e: bool = typer.Option(False, help="Show TOTP code of a key outside key file."),
  */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_typer); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
@@ -14904,7 +14910,7 @@ if (!__Pyx_RefNanny) {
   /* "main.py":123
  * def show_code(
  *         key_id: str = typer.Argument(None, help="Key-ID to show code. (Use [command: keys] to see the IDs)"),
- *         issuer_name: str = typer.Option(None, help="Search TOTP code by issuer."),             # <<<<<<<<<<<<<<
+ *         issuer: str = typer.Option(None, help="Search TOTP code by issuer."),             # <<<<<<<<<<<<<<
  *         e: bool = typer.Option(False, help="Show TOTP code of a key outside key file."),
  *         t: bool = typer.Option(False, help="Show the remaining time for the code to change.")
  */
@@ -14920,13 +14926,13 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_t_4)->__pyx_arg_issuer_name = __pyx_t_6;
+  __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_t_4)->__pyx_arg_issuer = __pyx_t_6;
   __Pyx_GIVEREF(__pyx_t_6);
   __pyx_t_6 = 0;
 
   /* "main.py":124
  *         key_id: str = typer.Argument(None, help="Key-ID to show code. (Use [command: keys] to see the IDs)"),
- *         issuer_name: str = typer.Option(None, help="Search TOTP code by issuer."),
+ *         issuer: str = typer.Option(None, help="Search TOTP code by issuer."),
  *         e: bool = typer.Option(False, help="Show TOTP code of a key outside key file."),             # <<<<<<<<<<<<<<
  *         t: bool = typer.Option(False, help="Show the remaining time for the code to change.")
  * ):
@@ -14948,7 +14954,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_5 = 0;
 
   /* "main.py":125
- *         issuer_name: str = typer.Option(None, help="Search TOTP code by issuer."),
+ *         issuer: str = typer.Option(None, help="Search TOTP code by issuer."),
  *         e: bool = typer.Option(False, help="Show TOTP code of a key outside key file."),
  *         t: bool = typer.Option(False, help="Show the remaining time for the code to change.")             # <<<<<<<<<<<<<<
  * ):
@@ -15115,7 +15121,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 215, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_key_id, __pyx_n_s_str) < 0) __PYX_ERR(0, 215, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_issuer_name, __pyx_n_s_str) < 0) __PYX_ERR(0, 215, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_issuer, __pyx_n_s_str) < 0) __PYX_ERR(0, 215, __pyx_L1_error)
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_4main_17del_key, 0, __pyx_n_s_del_key, NULL, __pyx_n_s_main_2, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 215, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (!__Pyx_CyFunction_InitDefaults(__pyx_t_3, sizeof(__pyx_defaults2), 2)) __PYX_ERR(0, 215, __pyx_L1_error)
@@ -15124,7 +15130,7 @@ if (!__Pyx_RefNanny) {
  * @app.command()
  * def del_key(
  *         key_id: str = typer.Argument(None, help="Key-ID to delete. Use [command: keys] to see IDs"),             # <<<<<<<<<<<<<<
- *         issuer_name: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")
+ *         issuer: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")
  * ):
  */
   __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_typer); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 217, __pyx_L1_error)
@@ -15146,7 +15152,7 @@ if (!__Pyx_RefNanny) {
   /* "main.py":218
  * def del_key(
  *         key_id: str = typer.Argument(None, help="Key-ID to delete. Use [command: keys] to see IDs"),
- *         issuer_name: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")             # <<<<<<<<<<<<<<
+ *         issuer: str = typer.Option(None, help="Issuer, provider, etc. Example = GitHub")             # <<<<<<<<<<<<<<
  * ):
  *     try:
  */
@@ -15162,7 +15168,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_t_3)->__pyx_arg_issuer_name = __pyx_t_5;
+  __Pyx_CyFunction_Defaults(__pyx_defaults2, __pyx_t_3)->__pyx_arg_issuer = __pyx_t_5;
   __Pyx_GIVEREF(__pyx_t_5);
   __pyx_t_5 = 0;
   __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_3, __pyx_pf_4main_26__defaults__);
@@ -15274,7 +15280,7 @@ if (!__Pyx_RefNanny) {
  * def gen_key(
  *         name: str = typer.Argument(None, help="Name, E-Mail, etc. Example = example@example.com"),             # <<<<<<<<<<<<<<
  *         issuer_name: str = typer.Argument(None, help="Issuer, provider, etc. Example = GitHub"),
- *         save: bool = typer.Option(False, help="Save the generated key in the key file.")
+ *         save: bool = typer.Option(False, help="Save the generated key in the key file."),
  */
   __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_typer); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 278, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -15296,7 +15302,7 @@ if (!__Pyx_RefNanny) {
  * def gen_key(
  *         name: str = typer.Argument(None, help="Name, E-Mail, etc. Example = example@example.com"),
  *         issuer_name: str = typer.Argument(None, help="Issuer, provider, etc. Example = GitHub"),             # <<<<<<<<<<<<<<
- *         save: bool = typer.Option(False, help="Save the generated key in the key file.")
+ *         save: bool = typer.Option(False, help="Save the generated key in the key file."),
  * ):
  */
   __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_typer); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 279, __pyx_L1_error)
@@ -15318,7 +15324,7 @@ if (!__Pyx_RefNanny) {
   /* "main.py":280
  *         name: str = typer.Argument(None, help="Name, E-Mail, etc. Example = example@example.com"),
  *         issuer_name: str = typer.Argument(None, help="Issuer, provider, etc. Example = GitHub"),
- *         save: bool = typer.Option(False, help="Save the generated key in the key file.")             # <<<<<<<<<<<<<<
+ *         save: bool = typer.Option(False, help="Save the generated key in the key file."),             # <<<<<<<<<<<<<<
  * ):
  *     try:
  */
