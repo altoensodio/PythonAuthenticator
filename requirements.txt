@@ -2,3 +2,4 @@ pyotp
 typer
 tabulate
 inquirer
+cryptography

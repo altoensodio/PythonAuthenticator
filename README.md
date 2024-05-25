@@ -3,7 +3,7 @@ TOTP authenticator writen in Python
 
 i made this bc my phone was dying lol (sorry if i write this like a caveman, english is not my main language)
 
-![Demo](https://i.imgur.com/RQ7zDrU.png)
+![Demo](https://i.imgur.com/BDaVUt7.png)
 
 ## Installation
 
@@ -46,6 +46,16 @@ $ mv pyauth /usr/bin/
 ```
 
 ## Usage
+If you leave in blank the ID/name argument in:
+- del-key
+- del-keyfile
+- show-code
+- mod-key
+- recover-key
+- encrypt-keyfile
+
+a list will be prompted to choose the ID/key/name etc...
+
 ### Add key
 ```bash
 $ pyauth add-key name issuer key
@@ -54,6 +64,7 @@ $ pyauth add-key name issuer key
 ```bash
 $ pyauth del-key ID
 $ pyauth del-key --issuer Issuer # search key for issuer, provider, etc.
+$ pyatuh del-key --d ID # the key will not be stored in the trash file and will be deleted definitely.
 ```
 ### Show specific code
 ```bash
@@ -74,17 +85,32 @@ $ pyauth keys --t # show time left of current codes.
 $ pyauth gen-key # generate and prints the key
 $ pyauth gen-key --save name issuer # generate and saves the new key
 ```
-## Examples
+### Modify key
 ```bash
-$ pyauth add-key example2 GitHub BASE32SECRET3232
-$ pyauth del-key 1
-$ pyauth del-key --issuer GitHub
-$ pyauth gen-key
-$ pyauth gen-key --save example Example
-$ pyauth show-code 1 # you can use --t argument to show the time left of current code in the commands ahead
-$ pyauth show-code --e BASE32SECRET3232
-$ pyauth show-code --issuer GitHub
-$ pyauth keys
+$ pyauth mod-key ID
+$ pyauth mod-key --isuser GitHub # search key for issuer, provider, etc.
+```
+### Clean trash
+```bash
+# if you delete a key without the --d option will be stored in the trash file.
+$ pyauth clean-trash # delete ALL of the keys stored in the trash file.
+```
+### Recover deleted keys
+```bash
+$ pyauth recover-key file ## replace file with the name of the keyfile the key was originally
+```
+### Create a new key file
+```bash
+$ pyauth add-keyfile name
+$ pyauth add-keyfile --encrypted name  # the key file will be encrypted with base64
+```
+### Delete a key file
+```bash
+$ pyauth del-keyfile name
+```
+### Encrypt an existing key file
+```bash
+$ pyauth encrypt-keyfile name
 ```
 
 ## Libraries used
@@ -92,6 +118,7 @@ $ pyauth keys
 - [typer](https://github.com/tiangolo/typer)
 - [tabulate](https://github.com/astanin/python-tabulate)
 - [inquirer](https://github.com/magmax/python-inquirer)
+- [cryptography](https://github.com/pyca/cryptography)
 
 ## Contributing
 Contributions should include tests and an explanation for the changes they propose. Documentation (examples, README.md) should be updated accordingly. Besides that feel free to contribute :)
